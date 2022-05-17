@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    
+    <title>Document</title>
+</head>
+    <body>
+        
+        <nav>
+        <img width="100px" class="logo" src="images/logo.gif" alt="logo">
+        
+            <ul >
+                <li><a href="#">home</a></li>
+                <li><a href="#">Projects</a></li>
+            </ul>
+        </nav>
+        <script src="script.js"></script>
+        https://documenter.getpostman.com/view/11586746/SztEa7bL#0ea5c425-c116-47e5-a83f-64f0a39a10db<div id="app">
+            <h1 id='title'>Championship</h1>
+          
+            <section v-if="errored">
+              <p>We're sorry, we're not able to retrieve this information at the moment, please try back later</p>
+            </section>
+          
+            <section v-else>
+              <div v-if="loading">Loading...</div>
+          
+              <div
+                v-else
+                v-for="driver in info"
+                class="driver-card"
+              >
+                      <div class="col col-1">
+                          <h1>{{ driver.position }}</h1>
+                          <span class='constructor' v-bind:id='driver.Constructors[0].constructorId'></span>
+                      </div>
+                      <div class="col col-2">
+                          <h2>{{driver.Driver.givenName}} <span class='name'>{{driver.Driver.familyName}}</span></h2>
+                          <h3>{{driver.Constructors[0].name}}</h3>
+                      </div>
+                      <div class="col col-3">
+                          <span class="points">{{driver.points}} PTS</span>
+                      </div>
+          
+              </div>
+          
+            </section>
+          </div>
+    </body>
+</html>
