@@ -1,12 +1,19 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
+@font-face {
+  font-family: f1;
+  src: url(Formula1-Wide_web_0.ttf);
+}
+@font-face {
+  font-family: f1name;
+  src: url(Formula1-Bold_web_0.ttf);
+}
 html{
   font-size: 62.5%;
 }
 body {
     margin:0;
-    background-color: #001e33;
+    background-color: #1a1d20;
 }
 .logo{
     margin-right: 3rem;
@@ -15,7 +22,7 @@ body {
 nav, ul{
     width:100%;
     align-items: center;
-    list-style-type: none;
+    list-style-type:none;
     display: flex;
     margin: 0;
     padding: 0;
@@ -40,4 +47,63 @@ nav, ul{
   li a:hover {
     color: #15616D;
   }
+
+ 
+.podium{
+  margin-left: auto;
+  margin-right: auto;
+  width: 100rem;
+  height: 50rem;
+  display: grid;
+  justify-content: center;    
+  border: 0.1rem solid white;
+  border-radius: 5rem;
+  margin-top: 15rem;
+  grid-template-columns: repeat(10, 53rem);
+  grid-template-rows: 53rem;
+  padding-top: 2rem;
+}
+.driver1{
+  z-index: 3;
+  width: 60rem;
+  clip-path: circle(49% at 30rem 22rem);
+  place-self: center;
+  grid-column: 5 / 7;
+  grid-row: 1;
+}
+
+.driver2{
+  /*margin-left: -30rem;*/
+  z-index: 2;
+  width: 53rem;
+  height: 53rem;
+  clip-path: circle(46% at 27.5rem 22rem);
+  grid-column: 6 / 8;
+  grid-row: 1;
+}
+.driver3{
+  z-index: 1;
+  /*margin-right: -30rem;*/
+  width: 51rem;
+  height: 51rem;
+  clip-path: circle(45% at 25rem 22rem);
+  grid-column: 5 / 6;
+  grid-row: 1;
   
+
+}
+
+
+.info{
+  padding: 1rem;
+font-family: f1;
+font-size: 1.5rem;
+color: white;
+grid-column: 5 / 7;
+  grid-row: 1;
+  place-self: center;
+  z-index: 4;
+  background-color: #f91437;
+  border-radius: 2.5rem;
+
+}     
