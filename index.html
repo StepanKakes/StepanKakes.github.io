@@ -5,11 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="normalize.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./script.js"></script>
+    
     <title>Document</title>
 </head>
     <body>
+
         <nav>
         
             <ul >
@@ -17,20 +20,54 @@
                 <li><a href="#">Projects</a></li>
             </ul>
         </nav>
+        <div class="grid"> 
         <div class="podium">
-            <div class="info">
-                <p>LECLERC Charles</p>
-                <p class="points1"></p>
-                <p>PTS</p>
-            </div>
-            
+            <p class="points1"></p>
+            <p class="points2"></p>
+            <p class="points3"></p>
+            <p class="position1">1</p>
+            <p class="position2">2</p>
+            <p class="position3">3</p>
+            <span class="circle1" style="background-color: ;"></span>
+            <span class="circle2"></span>
+            <span class="circle3"></span>
             <img class="driver3">
             <img class="driver1">
             <img class="driver2">
         </div>
+      </div>
         
-        <p class="id"></p>  
+        <div id="app">
+            <section v-if="errored">
+              <p>We're sorry, we're not able to retrieve this information at the moment, please try back later</p>
+            </section>
+          
+            <section v-else>
+              <div v-if="loading">Loading...</div>
+          
+              <div
+                v-for="driver in info"
+                class="driver-card"
+              >
+                      <div class="col col-1">
+                          <h1>{{ driver.position }}</h1>
+                          <span class='constructor' v-bind:id='driver.Constructors[0].constructorId'></span>
+                      </div>
+                      <div class="col col-2">
+                          <h2>{{driver.Driver.givenName}} <span class='name'>{{driver.Driver.familyName}}</span></h2>
+                          <h3>{{driver.Constructors[0].name}}</h3>
+                      </div>
+                      <div class="col col-3">
+                          <span class="points">{{driver.points}} PTS</span>
+                      </div>
+          
+              </div>
+          
+            </section>
+          </div>
           <!-- partial -->
-            
+            <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
+          <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js'></script><script  src="./script.js"></script>
+          
     </body>
 </html>
