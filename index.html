@@ -20,7 +20,6 @@
                 <li><a href="#">Projects</a></li>
             </ul>
         </nav>
-        <div class="grid"> 
         <div class="podium">
             <p class="points1"></p>
             <p class="points2"></p>
@@ -28,14 +27,13 @@
             <p class="position1">1</p>
             <p class="position2">2</p>
             <p class="position3">3</p>
-            <span class="circle1" style="background-color: ;"></span>
+            <span class="circle1"></span>
             <span class="circle2"></span>
             <span class="circle3"></span>
             <img class="driver3">
             <img class="driver1">
             <img class="driver2">
         </div>
-      </div>
         
         <div id="app">
             <section v-if="errored">
@@ -47,8 +45,7 @@
           
               <div
                 v-for="driver in info"
-                class="driver-card"
-              >
+                class="driver-card" >
                       <div class="col col-1">
                           <h1>{{ driver.position }}</h1>
                           <span class='constructor' v-bind:id='driver.Constructors[0].constructorId'></span>
